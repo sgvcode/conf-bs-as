@@ -269,6 +269,21 @@ footer li a {
   color: var(--white);
 }
 
+#oradores,
+#fecha,
+#form {
+  background-color: transparent;
+  position: relative;
+}
+#oradores {
+  top: -80px;
+}
+
+#fecha,
+#form {
+  top: -54px;
+}
+
 
 
 @media (max-width: 375px) {
