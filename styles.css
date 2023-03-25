@@ -1,0 +1,419 @@
+:root {
+  scroll-behavior: smooth;
+  --gray: rgb(53, 58, 64);
+  --green: rgb(41, 167, 68);
+  --white: rgb(253, 253, 253);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: var(--gray);
+}
+
+.nav-link__direct {
+  color: var(--green);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  background-color: rgba(2, 2, 2, 0.541);
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  
+}
+
+h2 {
+  color: var(--white);
+  text-align: right;
+}
+
+h3 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.1;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+h6 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: .65rem;
+  margin-top: .8rem;
+}
+
+.hero p {
+  color: var(--white);
+  text-align: right;
+  width: 100%;
+  max-width: 600px;
+  text-shadow: 2px 2px 0.8px rgb(0, 0, 0);
+}
+
+.btn__quiero {
+  color: var(--white);
+  background-color: transparent;
+  border: 1px solid var(--white);
+  border-radius: .3rem;
+  padding: .3rem 1rem;
+}
+
+.btn__quiero:hover {
+  color: rgb(0, 0, 0);
+  background-color: var(--white);
+  transition: all .5s ease;
+}
+
+.btn__comprar {
+  color: black;
+  background-color: var(--green);
+  border: none;
+  color: white;
+}
+
+.btn__comprar:hover {
+  background-color: darkgreen;
+  transition: all .5s ease;
+}
+
+.btn__quiero,
+.btn__comprar {
+  border-radius: .3rem;
+  padding: .3rem 1rem;
+}
+
+.oradores__detalle {
+  padding: 0 1rem;
+}
+
+.oradores__detalle p {
+  font-size: .7rem;
+  line-height: 1.2rem;
+}
+
+.orador img {
+  width: 100%;
+}
+
+.orador {
+  border: 1px solid lightgray;
+}
+
+.orador h6 {
+  text-align: left;
+  margin: 1.2rem 0 .2rem 1rem;
+}
+
+h6 .js,
+h6 .react,
+h6 .ng,
+h6 .st {
+  text-transform: none;
+  font-weight: 900;
+  margin-right: 5px;
+  padding: 1px 5px;
+  border-radius: 5px;
+  justify-content: flex-start;
+}
+
+h6 .js {
+  background-color: #ffc800;
+}
+
+h6 .react {
+  background-color: rgb(21, 161, 184);
+  color: var(--white);
+}
+
+h6 .ng {
+  background-color: rgb(106, 116, 125);
+  color: var(--white);
+}
+
+h6 .st {
+  color: var(--white);
+  background-color: rgb(219, 54, 70);
+}
+
+.textos__baires {
+  background-color: var(--gray);
+  color: var(--white);
+}
+
+.textos__baires p {
+  font-size: .76rem;
+  line-height: 1.3rem;
+}
+
+.textos__baires a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: .76rem;
+  padding: .4rem;
+  border-radius: 4px;
+  border: 1px solid var(--white);
+}
+
+.formulario {
+  padding: 0 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.formulario p {
+  text-align: center;
+  font-size: .9rem;
+}
+
+.formulario p a {
+  color: black;
+}
+
+.formulario p a:hover {
+  color: var(--green)
+}
+
+form {
+  text-align: center;
+}
+
+input, textarea {
+  border:1px solid lightgrey;
+  border-radius: 4px;
+  width: 100%;
+}
+
+input {
+  margin: .5rem 0;
+  height: 1.8rem;
+  padding: 0 .5rem;
+  font-size: .76rem;
+}
+
+textarea {
+  margin-top: .5rem;
+  height: 6.5rem;
+  font-size: 1.1rem;
+  padding: .5rem 1rem;
+}
+
+#submit {
+  color: var(--white);
+  background-color: rgb(150, 201, 62);
+  height: 2.5rem;
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+#submit:hover {
+  background-color: var(--gray);
+  transition: all .5s ease-in-out;
+}
+
+.form__nota {
+  display: block;
+  font-size: .7rem;
+  text-align: left;
+  color: darkgray;
+}
+
+footer {
+  background: rgb(28,54,67);
+  background: linear-gradient(90deg, rgba(28,54,67,1) 0%, rgba(30,83,113,1) 100%);
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 5rem;
+  text-align: center;
+}
+
+footer li {
+  display: inline;
+  list-style: none;
+  font-size: .8rem;
+  padding: 1rem;
+}
+
+footer li a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+
+
+@media (max-width: 375px) {
+  .text {
+    font-size: 12px;
+    line-height: 1rem;
+    padding: 0 1rem;
+    margin:0;
+    align-items: center;
+  }
+
+  .text h2 {
+    display:none;
+  }
+
+  .hero p {
+    text-align: center;
+  }
+
+  .btn__comprar,.btn__quiero {
+    display: inline;
+    padding: 5px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 376px) {
+  .text {
+    font-size: 14px;
+    line-height: 1rem;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .hero p, h2 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 567px) {
+  form {
+    width: 100%;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+  }
+
+  .navbar {
+    padding: .25rem
+  }
+}
+
+@media (min-width: 568px){
+  .text {
+    font-size: 1rem;
+    line-height: 1.7rem;
+    padding: 0 3rem;
+  }
+
+  .navbar {
+    padding: .25rem 5%;
+  }
+  form {
+    width: 90%;
+  }
+
+  input {
+    display:inline;
+    width: calc(50% - 4px);
+  }
+}
+
+@media (max-width: 775px) {
+  .grid__oradores {
+    min-width: 240px;
+    max-width: 60%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 776px) {
+  .navbar {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+  }
+
+  .hero {
+    padding: 4rem 0 0;
+  }
+
+  .text {
+    align-items: flex-end;
+    padding: 6rem;
+  }
+
+  .hero p, h2{
+    text-align: right;
+  }
+
+  .grid__oradores {
+    width: 72%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+    margin: 0 auto;
+  }
+
+  form {
+    width: 640px;
+  }
+}
+
+
+@media (max-width: 991px){
+
+  .imagen__baires {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .textos__baires {
+    margin: 0 !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    padding: .5rem 5%;
+  }
+
+  textarea{
+    width: calc(100% - 4px);
+  }
+
+  .textos__baires {
+    border-left: 1px solid var(--white)
+  }
+
+  .text {
+    margin: 3
+  }
+}
