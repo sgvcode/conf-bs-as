@@ -40,7 +40,7 @@ header {
   position: absolute;
   width: 100%;
   margin: 0;
-  
+
 }
 
 h2 {
@@ -203,8 +203,9 @@ form {
   text-align: center;
 }
 
-input, textarea {
-  border:1px solid lightgrey;
+input,
+textarea {
+  border: 1px solid lightgrey;
   border-radius: 4px;
   width: 100%;
 }
@@ -244,8 +245,8 @@ textarea {
 }
 
 footer {
-  background: rgb(28,54,67);
-  background: linear-gradient(90deg, rgba(28,54,67,1) 0%, rgba(30,83,113,1) 100%);
+  background: rgb(28, 54, 67);
+  background: linear-gradient(90deg, rgba(28, 54, 67, 1) 0%, rgba(30, 83, 113, 1) 100%);
 }
 
 footer {
@@ -269,41 +270,26 @@ footer li a {
   color: var(--white);
 }
 
-#oradores,
-#fecha,
-#form {
-  background-color: transparent;
-  position: relative;
-}
-#oradores {
-  top: -80px;
-}
-
-#fecha,
-#form {
-  top: -54px;
-}
-
-
 
 @media (max-width: 375px) {
   .text {
     font-size: 12px;
     line-height: 1rem;
     padding: 0 1rem;
-    margin:0;
+    margin: 0;
     align-items: center;
   }
 
   .text h2 {
-    display:none;
+    display: none;
   }
 
   .hero p {
     text-align: center;
   }
 
-  .btn__comprar,.btn__quiero {
+  .btn__comprar,
+  .btn__quiero {
     display: inline;
     padding: 5px;
     font-size: 12px;
@@ -318,7 +304,8 @@ footer li a {
     padding: 0 1rem;
   }
 
-  .hero p, h2 {
+  .hero p,
+  h2 {
     text-align: center;
   }
 }
@@ -338,7 +325,7 @@ footer li a {
   }
 }
 
-@media (min-width: 568px){
+@media (min-width: 568px) {
   .text {
     font-size: 1rem;
     line-height: 1.7rem;
@@ -348,12 +335,13 @@ footer li a {
   .navbar {
     padding: .25rem 5%;
   }
+
   form {
     width: 90%;
   }
 
   input {
-    display:inline;
+    display: inline;
     width: calc(50% - 4px);
   }
 }
@@ -385,7 +373,8 @@ footer li a {
     padding: 6rem;
   }
 
-  .hero p, h2{
+  .hero p,
+  h2 {
     text-align: right;
   }
 
@@ -403,7 +392,7 @@ footer li a {
 }
 
 
-@media (max-width: 991px){
+@media (max-width: 991px) {
 
   .imagen__baires {
     margin-bottom: 0 !important;
@@ -420,7 +409,7 @@ footer li a {
     padding: .5rem 5%;
   }
 
-  textarea{
+  textarea {
     width: calc(100% - 4px);
   }
 
@@ -430,5 +419,21 @@ footer li a {
 
   .text {
     margin: 3
+  }
+
+  #oradores,
+  #fecha,
+  #form {
+    background-color: transparent;
+    position: relative;
+  }
+
+  #oradores {
+    top: -80px;
+  }
+
+  #fecha,
+  #form {
+    top: -54px;
   }
 }
