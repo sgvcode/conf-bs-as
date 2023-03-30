@@ -2,7 +2,7 @@
 Landing page responsive (html-css-bootstrap) CAC#23053
 
 # Online
-🌎🖥️📱 [Conf Bs As](https://conf-bsas-23053.onrender.com)
+🌎🖥️📱 [Conf Bs As](https://sgvcode.github.io/conf-bs-as/)
 
 # Objetivo:
 Replicar landing page de muestra
