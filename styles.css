@@ -250,27 +250,31 @@ footer {
   background: linear-gradient(90deg, rgba(28, 54, 67, 1) 0%, rgba(30, 83, 113, 1) 100%);
 }
 
-footer {
+/* footer {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   min-height: 5rem;
   text-align: center;
+} */
+
+footer ul {
+  display: flex;
+  align-items:center;
+  flex-wrap: wrap;
+  gap: 3rem;
 }
 
 footer li {
-  display: inline;
   list-style: none;
   font-size: .8rem;
-  padding: 1rem;
 }
 
 footer li a {
   text-decoration: none;
   color: var(--white);
 }
-
 
 @media (max-width: 375px) {
   .text {
@@ -402,6 +406,10 @@ footer li a {
   .textos__baires {
     margin: 0 !important;
   }
+
+  footer ul {
+    gap: .2rem;
+  }
 }
 
 @media (min-width: 992px) {
@@ -421,7 +429,7 @@ footer li a {
   }
 
   .text {
-    margin: 3
+    margin: 3rem;
   }
 
   #oradores,
