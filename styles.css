@@ -428,10 +428,6 @@ footer li a {
     border-left: 1px solid var(--white)
   }
 
-  .text {
-    margin: 3rem;
-  }
-
   #oradores,
   #fecha,
   #form {
