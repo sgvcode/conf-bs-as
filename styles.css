@@ -248,15 +248,7 @@ textarea {
 footer {
   background: rgb(28, 54, 67);
   background: linear-gradient(90deg, rgba(28, 54, 67, 1) 0%, rgba(30, 83, 113, 1) 100%);
-}
-
-footer {
-  /* display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center; */
   min-height: 5rem;
-  /* text-align: center; */
 }
 
 footer ul {
@@ -275,6 +267,8 @@ footer li a {
   text-decoration: none;
   color: var(--white);
 }
+
+/* INICIO VIEPORTS */
 
 @media (max-width: 375px) {
   .text {
@@ -363,12 +357,6 @@ footer li a {
 }
 
 @media (min-width: 776px) {
-  /* .navbar {
-    position: fixed;
-    z-index: 100;
-    width: 100%;
-  } */
-
   .hero {
     padding: 4rem 0 0;
   }
