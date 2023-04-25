@@ -29,6 +29,7 @@ header {
   display: flex;
   justify-content: center;
   position: relative;
+  height: 100vh;
 }
 
 .text {
@@ -41,7 +42,6 @@ header {
   position: absolute;
   width: 100%;
   margin: 0;
-
 }
 
 h2 {
@@ -81,6 +81,7 @@ h6 {
   border: 1px solid var(--white);
   border-radius: .3rem;
   padding: .3rem 1rem;
+  margin-bottom: .5rem;
 }
 
 .btn__quiero:hover {
@@ -271,23 +272,7 @@ footer li a {
 /* INICIO VIEPORTS */
 
 @media (max-width: 375px) {
-  .text {
-    font-size: 12px;
-    line-height: 1rem;
-    padding: 0 1rem;
-    margin: 0;
-    align-items: center;
-  }
-
-  .text h2 {
-    display: none;
-  }
-
-  .hero p {
-    text-align: center;
-  }
-
-  .btn__comprar,
+    .btn__comprar,
   .btn__quiero {
     display: inline;
     padding: 5px;
@@ -295,21 +280,19 @@ footer li a {
   }
 }
 
-@media (min-width: 376px) {
-  .text {
-    font-size: 14px;
-    line-height: 1rem;
-    align-items: center;
+
+@media (max-width: 567px) {
+  .hero p,
+  .hero h2,
+  .btns {
     padding: 0 1rem;
   }
 
-  .hero p,
-  h2 {
-    text-align: center;
+  .btns {
+    display: flex;
+    flex-direction: column;
   }
-}
 
-@media (max-width: 567px) {
   form {
     width: 100%;
   }
@@ -325,12 +308,6 @@ footer li a {
 }
 
 @media (min-width: 568px) {
-  .text {
-    font-size: 1rem;
-    line-height: 1.7rem;
-    padding: 0 3rem;
-  }
-
   .navbar {
     padding: .25rem 5%;
   }
