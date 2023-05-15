@@ -365,6 +365,7 @@ footer li a {
 @media (min-width: 376px) {}
 
 @media (max-width: 567px) {
+
   form {
     width: 100%;
   }
@@ -413,6 +414,13 @@ footer li a {
     background-size: cover;
   }
 
+<<<<<<< HEAD
+=======
+  .hero p, h2, .btns {
+    padding: 0 2rem;
+  }
+
+>>>>>>> ca39c5105409779cf4f4d0be734bf7e7a8a58545
   .img__header {
     display: none;
   }
