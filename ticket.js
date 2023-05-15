@@ -1,4 +1,4 @@
-document.getElementById('comprar__ticket').addEventListener('submit', function(event) {
+document.getElementById('comprar__ticket').addEventListener('submit', function (event) {
   event.preventDefault(); // Evita que el formulario se envíe
 
   var categoria = document.getElementById('categoria').value;
@@ -18,4 +18,9 @@ document.getElementById('comprar__ticket').addEventListener('submit', function(e
 
   var totalPagar = document.getElementById('totalPagar');
   totalPagar.innerHTML = `Total a pagar: $ ${total.toFixed(2)}`;
+});
+
+document.getElementById('resetBtn').addEventListener('click', function () {
+  document.getElementById('comprar__ticket').reset(); // Restablece los campos del formulario
+  document.getElementById('totalPagar').innerHTML = 'Total a pagar: $'; // Limpia el párrafo de salida de resultados
 });
