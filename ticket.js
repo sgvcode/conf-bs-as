@@ -1,9 +1,9 @@
 document.getElementById('comprar__ticket').addEventListener('submit', function (event) {
   event.preventDefault(); // Evita que el formulario se envíe
 
-  var categoria = document.getElementById('categoria').value;
-  var cantidad = parseFloat(document.getElementById('cantidad').value);
-  var descuento = 0;
+  let categoria = document.getElementById('categoria').value;
+  let cantidad = parseFloat(document.getElementById('cantidad').value);
+  let descuento = 0;
 
   // Descuento
   if (categoria === 'estudiante') {
@@ -14,9 +14,9 @@ document.getElementById('comprar__ticket').addEventListener('submit', function (
     descuento = 0.15;
   }
 
-  var total = cantidad * 200 * (1 - descuento); // Total
+  let total = cantidad * 200 * (1 - descuento); // Total
 
-  var totalPagar = document.getElementById('totalPagar');
+  let totalPagar = document.getElementById('totalPagar');
   totalPagar.innerHTML = `Total a pagar: $ ${total.toFixed(2)}`;
 });
 
