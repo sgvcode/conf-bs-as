@@ -292,6 +292,12 @@ p.salida {
 .box__ticket {
   padding: 20px 10px;
   text-align: center;
+  background-color: white;
+}
+
+.box__ticket:hover {
+  transform: scale(102%);
+  box-shadow: 0 2px 0 rgba(2, 2, 2, 0.1);
 }
 
 .box__ticket.blue {

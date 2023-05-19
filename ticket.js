@@ -24,3 +24,21 @@ document.getElementById('resetBtn').addEventListener('click', function () {
   document.getElementById('comprar__ticket').reset(); // Restablece los campos del formulario
   document.getElementById('totalPagar').innerHTML = 'Total a pagar: $'; // Limpia el párrafo de salida de resultados
 });
+
+// Botones descuento
+var estudianteBtn = document.getElementById('estudianteBtn');
+var traineeBtn = document.getElementById('traineeBtn');
+var juniorBtn = document.getElementById('juniorBtn');
+
+// Escuchar el evento click en los botones de categoría
+estudianteBtn.addEventListener('click', function () {
+  document.getElementById('categoria').value = 'estudiante';
+});
+
+traineeBtn.addEventListener('click', function () {
+  document.getElementById('categoria').value = 'trainee';
+});
+
+juniorBtn.addEventListener('click', function () {
+  document.getElementById('categoria').value = 'junior';
+});
