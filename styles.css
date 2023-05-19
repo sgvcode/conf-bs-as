@@ -296,8 +296,10 @@ p.salida {
 }
 
 .box__ticket:hover {
-  transform: scale(102%);
-  box-shadow: 0 2px 0 rgba(2, 2, 2, 0.1);
+  transform: scale(103%);
+  /* box-shadow: 0 2px 0 rgba(2, 2, 2, 0.1); */
+  transition: all .3s ease;
+  filter:drop-shadow(0px 5px 3px lightgray);
 }
 
 .box__ticket.blue {
