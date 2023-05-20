@@ -293,12 +293,11 @@ p.salida {
   padding: 20px 10px;
   text-align: center;
   background-color: white;
+  transition: all .2s ease;
 }
 
-.box__ticket:hover {
+.box__ticket:active {
   transform: scale(103%);
-  /* box-shadow: 0 2px 0 rgba(2, 2, 2, 0.1); */
-  transition: all .3s ease;
   filter:drop-shadow(0px 5px 3px lightgray);
 }
 
@@ -307,14 +306,29 @@ p.salida {
   border-radius: 2px;
 }
 
+.box__ticket.blue:hover {
+  outline: 1px solid rgb(52, 156, 254);
+  filter:drop-shadow(0px 5px 3px lightgray);
+}
+
 .box__ticket.green {
   border: 1px solid rgb(38, 181, 42);
   border-radius: 2px;
 }
 
+.box__ticket.green:hover {
+  outline: 1px solid rgb(38, 181, 42);
+  filter:drop-shadow(0px 5px 3px lightgray);
+}
+
+
 .box__ticket.orange {
   border: 1px solid rgb(255, 187, 0);
   border-radius: 2px;
+}
+.box__ticket.orange:hover {
+  outline: 1px solid rgb(255, 187, 0);
+  filter:drop-shadow(0px 5px 3px lightgray);
 }
 
 .box__ticket h6 {
