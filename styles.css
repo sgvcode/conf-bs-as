@@ -3,6 +3,8 @@
   --gray: rgb(53, 58, 64);
   --green: rgb(41, 167, 68);
   --white: rgb(253, 253, 253);
+  --darkgreen: rgba(28, 54, 67, 1);
+  --lightgreen: rgba(30, 83, 113, 1);
 }
 
 *,
@@ -16,11 +18,14 @@
   padding: 0;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
 .navbar {
+  width: 100%;
+  position: fixed;
+  z-index: 300;
   background-color: var(--gray);
 }
 
@@ -289,7 +294,7 @@ p.salida {
   max-width: 640px;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 5px;
-  margin-top: 100px;
+  margin-top: 40px;
 }
 
 .box__ticket {
@@ -305,7 +310,7 @@ p.salida {
 } */
 
 .button-active {
-  filter:drop-shadow(0px 5px 3px lightgray);
+  filter: drop-shadow(0px 5px 3px lightgray);
   transform: scaleY(105%);
 }
 
@@ -334,6 +339,7 @@ p.salida {
   border: 1px solid rgb(255, 187, 0);
   border-radius: 2px;
 }
+
 .box__ticket.orange:hover {
   outline: 1px solid rgb(255, 187, 0);
   /* filter:drop-shadow(0px 5px 3px lightgray); */
@@ -360,7 +366,7 @@ p.salida {
 
 footer {
   background: rgb(28, 54, 67);
-  background: linear-gradient(90deg, rgba(28, 54, 67, 1) 0%, rgba(30, 83, 113, 1) 100%);
+  background: linear-gradient(90deg, var(--darkgreen) 0%, var(--lightgreen) 100%);
   min-height: 5.2rem;
 }
 
@@ -382,9 +388,33 @@ footer li a {
 }
 
 
+.popup {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  width: 86%;
+  max-width: 640px;
+  height: 60%;
+  opacity: 95%;
+  transform: translate(-50%, -50%);
+  background-color: var(--gray);
+  color: var(--white);
+  font-size: 20px;
+  outline: 10px solid var(--white);
+  white-space: pre-line;
+  text-align: center;
+  z-index: 9999;
+}
+
+
+
 /* INICIO VIEPORTS */
 
 @media (max-width: 375px) {
+
   .btn__comprar,
   .btn__quiero {
     display: inline;
@@ -416,7 +446,7 @@ footer li a {
   }
 
   .navbar {
-    padding: .25rem
+    padding: .25rem;
   }
 }
 
@@ -431,7 +461,8 @@ footer li a {
   }
 
   input,
-  select, label{
+  select,
+  label {
     display: inline;
     width: calc(50% - 4px);
   }
@@ -445,7 +476,9 @@ footer li a {
     background-size: cover;
   }
 
-  .hero p, h2, .btns {
+  .hero p,
+  h2,
+  .btns {
     padding: 0 2rem;
   }
 
@@ -492,6 +525,9 @@ footer li a {
 }
 
 @media (max-width: 991px) {
+  html {
+    scroll-padding: 65px;
+  }
 
   .imagen__baires {
     margin-bottom: 0 !important;
@@ -508,11 +544,11 @@ footer li a {
 }
 
 @media (min-width: 992px) {
+  html{
+    scroll-padding: 0px;
+  }
   .navbar {
     padding: .5rem 5%;
-    position: fixed;
-    z-index: 100;
-    width: 100%;
   }
 
   textarea {

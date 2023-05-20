@@ -26,6 +26,8 @@ document.getElementById('resetBtn').addEventListener('click', function () {
 });
 
 // ____________________________________________________________
+// CODIGO ORIGINAL PEDIDO
+// ____________________________________________________________
 // Obtener los botones de categoría
 // let estudianteBtn = document.getElementById('estudianteBtn');
 // let traineeBtn = document.getElementById('traineeBtn');
@@ -80,14 +82,31 @@ document.getElementById('resetBtn').addEventListener('click', function () {
 
 // ____________________________________________________________
 // OPCION MOSTRAR TOTAL A PAGAR EN FORMA AUTOMÁTICA
-// Obtener los botones de categoría Automático
+// ____________________________________________________________
+// Obtener los botones de categoría
 // let estudianteBtn = document.getElementById('estudianteBtn');
 // let traineeBtn = document.getElementById('traineeBtn');
 // let juniorBtn = document.getElementById('juniorBtn');
 // let categoriaSelect = document.getElementById('categoria');
 // let cantidadInput = document.getElementById('cantidad');
+// let resumenBtn = document.getElementById('resumenBtn');
 
-// // Función para activar un botón y desactivar los demás
+// // Impide que se ingrese un número negativo
+// cantidadInput.addEventListener('change', function () {
+//   let cantidad = parseFloat(cantidadInput.value);
+//   if (cantidad < 0) {
+//     cantidadInput.value = "";
+//   }
+// })
+
+// function formularioCompleto() {
+//   let nombre = document.getElementById('nombreN').value;
+//   let cantidad = cantidadInput.value;
+
+//   return nombre !== '' && cantidad !== '';
+// }
+
+// // Activar un botón y desactivar los demás
 // function activarBoton(boton) {
 //   estudianteBtn.classList.remove('button-active');
 //   traineeBtn.classList.remove('button-active');
@@ -95,13 +114,13 @@ document.getElementById('resetBtn').addEventListener('click', function () {
 //   boton.classList.add('button-active');
 // }
 
-// // Función para calcular y actualizar el total a pagar
+// // Calcular y actualizar el total a pagar
 // function actualizarTotal() {
 //   let categoria = categoriaSelect.value;
 //   let cantidad = parseFloat(cantidadInput.value);
 //   let descuento = 0;
 
-//   // Descuento
+//   // Aplicar los descuentos
 //   if (categoria === 'estudiante') {
 //     descuento = 0.8;
 //     activarBoton(estudianteBtn);
@@ -116,14 +135,14 @@ document.getElementById('resetBtn').addEventListener('click', function () {
 //   let total = cantidad * 200 * (1 - descuento); // Total
 
 //   let totalPagar = document.getElementById('totalPagar');
-//   if (isNaN(total)) {
+//   if (isNaN(total) || total <= 0) {
 //     totalPagar.innerHTML = 'Total a pagar: $';
 //   } else {
 //     totalPagar.innerHTML = `Total a pagar: $ ${total.toFixed(2)}`;
 //   }
 // }
 
-// // Escuchar el evento click en los botones de categoría
+// // Escuchar evento click en los botones de categorías
 // estudianteBtn.addEventListener('click', function () {
 //   categoriaSelect.value = 'estudiante';
 //   activarBoton(estudianteBtn);
@@ -142,14 +161,33 @@ document.getElementById('resetBtn').addEventListener('click', function () {
 //   actualizarTotal();
 // });
 
-// // Escuchar el evento change en el <select>
+// // Escuchar el cambio en el <select>
 // categoriaSelect.addEventListener('change', function () {
+//   actualizarTotal();
+// });
+
+// // Escuchar el evento input en el campo de cantidad
+// cantidadInput.addEventListener('input', function () {
 //   actualizarTotal();
 // });
 
 // // Activar el botón correspondiente inicialmente
 // actualizarTotal();
-// ------------------------------------------------------------------
+
+// // Mostrar el mensaje tipo popup
+// resumenBtn.addEventListener('click', function () {
+//   if (formularioCompleto()) {
+//     let nombre = document.getElementById('nombreN').value;
+//     let cantidad = cantidadInput.value;
+
+//     let mensaje = `Hola ${nombre}! Elegiste comprar ${cantidad} ticket(s).`;
+
+//     alert(mensaje);
+//   } else {
+//     alert("Por favor, completá los datos en el formulario.");
+//   }
+// });
+
 
 // Obtener los botones de categoría
 let estudianteBtn = document.getElementById('estudianteBtn');
@@ -160,12 +198,19 @@ let cantidadInput = document.getElementById('cantidad');
 let resumenBtn = document.getElementById('resumenBtn');
 
 // Impide que se ingrese un número negativo
-cantidadInput.addEventListener('change', function(){
+cantidadInput.addEventListener('change', function () {
   let cantidad = parseFloat(cantidadInput.value);
-  if (cantidad < 0){
+  if (cantidad < 0) {
     cantidadInput.value = "";
   }
 })
+
+function formularioCompleto() {
+  let nombre = document.getElementById('nombreN').value;
+  let cantidad = cantidadInput.value;
+
+  return nombre !== '' && cantidad !== '';
+}
 
 // Activar un botón y desactivar los demás
 function activarBoton(boton) {
@@ -196,10 +241,10 @@ function actualizarTotal() {
   let total = cantidad * 200 * (1 - descuento); // Total
 
   let totalPagar = document.getElementById('totalPagar');
-  if (isNaN(total)) {
+  if (isNaN(total) || total <= 0) {
     totalPagar.innerHTML = 'Total a pagar: $';
   } else {
-    totalPagar.innerHTML = `Total a pagar: $ ${total.toFixed(2)}`;
+    totalPagar.innerHTML = `Total a pagar: $${total.toFixed(0)}`;
   }
 }
 
@@ -235,19 +280,28 @@ cantidadInput.addEventListener('input', function () {
 // Activar el botón correspondiente inicialmente
 actualizarTotal();
 
-// // Restablecer la cantidad a 0
-// resumenBtn.addEventListener('click', function () {
-//   cantidadInput.value = 0;
-//   actualizarTotal();
-// });
-
+// Mostrar el mensaje tipo popup
 resumenBtn.addEventListener('click', function () {
-  let nombre = document.getElementById('nombreN').value;
-  let apellido = document.getElementById('apellidoN').value;
-  let cantidad = cantidadInput.value;
+  if (formularioCompleto()) {
+    let nombre = document.getElementById('nombreN').value;
+    let cantidad = cantidadInput.value;
+    let totalPagar = document.getElementById('totalPagar').textContent;
 
-  let mensaje = `Hola ${nombre}. Elegiste comprar ${cantidad} ticket(s).`;
+    let mensaje = `Hola ${nombre.toUpperCase()}!\nElegiste comprar '${cantidad}' ticket(s).\n\n${totalPagar}`;
 
-  // Mostrar el mensaje tipo popup
-  alert(mensaje);
+    // Crear un elemento <div> para el popup
+    let popup = document.createElement('div');
+    popup.classList.add('popup');
+    popup.textContent = mensaje;
+
+    // Agregar el popup al cuerpo del documento
+    document.body.appendChild(popup);
+
+    // Eliminar el popup después de 3 segundos
+    setTimeout(function () {
+      popup.remove();
+    }, 3600);
+  } else {
+    alert("Por favor, completa los datos en el formulario.");
+  }
 });
