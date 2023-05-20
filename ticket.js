@@ -159,6 +159,14 @@ let categoriaSelect = document.getElementById('categoria');
 let cantidadInput = document.getElementById('cantidad');
 let resumenBtn = document.getElementById('resumenBtn');
 
+// Impide que se ingrese un número negativo
+cantidadInput.addEventListener('change', function(){
+  let cantidad = parseFloat(cantidadInput.value);
+  if (cantidad < 0){
+    cantidadInput.value = "";
+  }
+})
+
 // Activar un botón y desactivar los demás
 function activarBoton(boton) {
   estudianteBtn.classList.remove('button-active');
@@ -195,7 +203,7 @@ function actualizarTotal() {
   }
 }
 
-// Escuchar el evento click en los botones de categoría
+// Escuchar evento click en los botones de categorías
 estudianteBtn.addEventListener('click', function () {
   categoriaSelect.value = 'estudiante';
   activarBoton(estudianteBtn);
@@ -214,7 +222,7 @@ juniorBtn.addEventListener('click', function () {
   actualizarTotal();
 });
 
-// Escuchar el evento change en el <select>
+// Escuchar el cambio en el <select>
 categoriaSelect.addEventListener('change', function () {
   actualizarTotal();
 });
@@ -227,11 +235,12 @@ cantidadInput.addEventListener('input', function () {
 // Activar el botón correspondiente inicialmente
 actualizarTotal();
 
-// // Escuchar el evento click en el botón Resumen
+// // Restablecer la cantidad a 0
 // resumenBtn.addEventListener('click', function () {
-//   cantidadInput.value = 0; // Restablecer la cantidad a 0
+//   cantidadInput.value = 0;
 //   actualizarTotal();
 // });
+
 resumenBtn.addEventListener('click', function () {
   let nombre = document.getElementById('nombreN').value;
   let apellido = document.getElementById('apellidoN').value;
