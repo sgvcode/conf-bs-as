@@ -20,10 +20,7 @@ document.getElementById('comprar__ticket').addEventListener('submit', function (
   totalPagar.innerHTML = `Total a pagar: $ ${total.toFixed(2)}`;
 });
 
-document.getElementById('resetBtn').addEventListener('click', function () {
-  document.getElementById('comprar__ticket').reset(); // Restablece los campos del formulario
-  document.getElementById('totalPagar').innerHTML = 'Total a pagar: $'; // Limpia el párrafo de salida de resultados
-});
+
 
 // ____________________________________________________________
 // CODIGO ORIGINAL PEDIDO
@@ -304,4 +301,14 @@ resumenBtn.addEventListener('click', function () {
   } else {
     alert("Por favor, completa los datos en el formulario.");
   }
+});
+
+document.getElementById('resetBtn').addEventListener('click', function () {
+  document.getElementById('comprar__ticket').reset(); // Restablece los campos del formulario
+  document.getElementById('totalPagar').innerHTML = 'Total a pagar: $'; // Limpia el párrafo de salida de resultados
+
+  // activarBoton(estudianteBtn);
+  estudianteBtn.classList.remove('button-active');
+  traineeBtn.classList.remove('button-active');
+  juniorBtn.classList.remove('button-active');
 });

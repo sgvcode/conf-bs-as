@@ -312,6 +312,7 @@ p.salida {
 .button-active {
   filter: drop-shadow(0px 5px 3px lightgray);
   transform: scaleY(105%);
+  background-color: rgba(245, 245, 245, 0.082);
 }
 
 .box__ticket.blue {
