@@ -14,6 +14,9 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+html{
   scroll-behavior: smooth;
 }
 
@@ -180,7 +183,7 @@ h6 .st {
 }
 
 .formulario {
-  padding: 0 2rem 1rem;
+  padding: 0 3rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -296,9 +299,14 @@ p.salida {
   transition: all .2s ease;
 }
 
-.box__ticket:active {
+/* .box__ticket:active {
   transform: scale(103%);
   filter:drop-shadow(0px 5px 3px lightgray);
+} */
+
+.button-active {
+  filter:drop-shadow(0px 5px 3px lightgray);
+  transform: scaleY(105%);
 }
 
 .box__ticket.blue {
@@ -308,7 +316,7 @@ p.salida {
 
 .box__ticket.blue:hover {
   outline: 1px solid rgb(52, 156, 254);
-  filter:drop-shadow(0px 5px 3px lightgray);
+  /* filter:drop-shadow(0px 5px 3px lightgray); */
 }
 
 .box__ticket.green {
@@ -318,7 +326,7 @@ p.salida {
 
 .box__ticket.green:hover {
   outline: 1px solid rgb(38, 181, 42);
-  filter:drop-shadow(0px 5px 3px lightgray);
+  /* filter:drop-shadow(0px 5px 3px lightgray); */
 }
 
 
@@ -328,7 +336,7 @@ p.salida {
 }
 .box__ticket.orange:hover {
   outline: 1px solid rgb(255, 187, 0);
-  filter:drop-shadow(0px 5px 3px lightgray);
+  /* filter:drop-shadow(0px 5px 3px lightgray); */
 }
 
 .box__ticket h6 {
@@ -372,6 +380,7 @@ footer li a {
   text-decoration: none;
   color: var(--white);
 }
+
 
 /* INICIO VIEPORTS */
 
