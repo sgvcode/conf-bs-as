@@ -1,6 +1,3 @@
-## conf-bs-as
-Landing page responsive (html-css-bootstrap) CAC#23053
-
 ## Online
 ### 🌎🖥️📱 [Enlace a la página Conf Bs As](https://sgvcode.github.io/conf-bs-as/) <br>
 
