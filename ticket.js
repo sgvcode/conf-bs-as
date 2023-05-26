@@ -117,8 +117,9 @@ resumenBtn.addEventListener('click', function () {
     let nombre = document.getElementById('nombreN').value;
     let cantidad = cantidadInput.value;
     let totalPagar = document.getElementById('totalPagar').textContent;
+    let categoria = categoriaSelect.options[categoriaSelect.selectedIndex].text;
 
-    let mensaje = `Hola ${nombre.toUpperCase()}!\nElegiste comprar '${cantidad}' ticket(s).\n\n${totalPagar}`;
+    let mensaje = `Hola ${nombre.toUpperCase()}!\nElegiste comprar '${cantidad}' ticket(s)\ncomo '${categoria}'\n\n${totalPagar}`;
 
     // Crear un elemento <div> para el popup
     let popup = document.createElement('div');
@@ -205,106 +206,77 @@ document.getElementById('resetBtn').addEventListener('click', function () {
 
 
 
-// // CODIGO OPTIMIZADO A REVISAR
-// // Obtener los elementos del DOM una sola vez
-// const comprarTicketForm = document.getElementById('comprar__ticket');
+// // Codigo optimizado con categorias agrupadas
+// const botonesCategoria = {
+//   estudiante: document.getElementById('estudianteBtn'),
+//   trainee: document.getElementById('traineeBtn'),
+//   junior: document.getElementById('juniorBtn')
+// };
 // const categoriaSelect = document.getElementById('categoria');
 // const cantidadInput = document.getElementById('cantidad');
-// const estudianteBtn = document.getElementById('estudianteBtn');
-// const traineeBtn = document.getElementById('traineeBtn');
-// const juniorBtn = document.getElementById('juniorBtn');
-// const totalPagar = document.getElementById('totalPagar');
-// const nombreInput = document.getElementById('nombreN');
 // const resumenBtn = document.getElementById('resumenBtn');
-// const resetBtn = document.getElementById('resetBtn');
+// const totalPagar = document.getElementById('totalPagar');
+// const descuentos = { estudiante: 0.8, trainee: 0.5, junior: 0.15 };
 
-// // Definir los descuentos para cada categoría
-// const descuentos = {
-//   estudiante: 0.8,
-//   trainee: 0.5,
-//   junior: 0.15
-// };
-
-// // Función para activar un botón y desactivar los demás
-// function activarBoton(boton) {
-//   [estudianteBtn, traineeBtn, juniorBtn].forEach(btn => {
-//     btn.classList.remove('button-active');
-//   });
-//   boton.classList.add('button-active');
-// }
-
-// // Función para calcular y actualizar el total a pagar
-// function actualizarTotal() {
-//   const categoria = categoriaSelect.value;
-//   const cantidad = parseFloat(cantidadInput.value);
-//   const descuento = descuentos[categoria] || 0;
-//   const total = cantidad * 200 * (1 - descuento);
-
-//   totalPagar.textContent = total > 0 ? `Total a pagar: $${total.toFixed(0)}` : 'Total a pagar: $';
-// }
-
-// // Escuchar eventos y realizar acciones correspondientes
-// comprarTicketForm.addEventListener('submit', function (event) {
+// document.getElementById('comprar__ticket').addEventListener('submit', (event) => {
 //   event.preventDefault();
 //   actualizarTotal();
 // });
 
-// cantidadInput.addEventListener('change', function () {
-//   const cantidad = parseFloat(cantidadInput.value);
-//   if (cantidad < 0) {
-//     cantidadInput.value = '';
-//   }
+// cantidadInput.addEventListener('change', () => {
+//   if (parseFloat(cantidadInput.value) < 0) cantidadInput.value = "";
 // });
 
-// [estudianteBtn, traineeBtn, juniorBtn].forEach(btn => {
-//   btn.addEventListener('click', function () {
-//     categoriaSelect.value = btn.id.replace('Btn', '');
-//     activarBoton(btn);
-//     actualizarTotal();
-//   });
-// });
+// function formularioCompleto() {
+//   return document.getElementById('nombreN').value !== '' && cantidadInput.value !== '';
+// }
 
-// categoriaSelect.addEventListener('change', function () {
-//   const selectedBtn = [estudianteBtn, traineeBtn, juniorBtn].find(btn => btn.id === `${categoriaSelect.value}Btn`);
-//   activarBoton(selectedBtn);
-//   actualizarTotal();
-// });
+// function activarBoton(categoria) {
+//   Object.values(botonesCategoria).forEach(boton => boton.classList.remove('button-active'));
+//   botonesCategoria[categoria].classList.add('button-active');
+// }
 
-// cantidadInput.addEventListener('input', actualizarTotal);
-
-// // Función para calcular y actualizar el total a pagar
 // function actualizarTotal() {
 //   const categoria = categoriaSelect.value;
 //   const cantidad = parseFloat(cantidadInput.value);
 //   const descuento = descuentos[categoria] || 0;
 //   const total = cantidad * 200 * (1 - descuento);
 
-//   totalPagar.textContent = total > 0 ? `Total a pagar: $${total.toFixed(0)}` : 'Total a pagar: $';
+//   activarBoton(categoria);
+//   totalPagar.innerHTML = isNaN(total) || total <= 0 ? 'Total a pagar: $' : `Total a pagar: $${total.toFixed(0)}`;
 // }
 
-// resumenBtn.addEventListener('click', function () {
-//   if (nombreInput.value && cantidadInput.value) {
-//     const nombre = nombreInput.value.toUpperCase();
+// Object.entries(botonesCategoria).forEach(([categoria, boton]) => {
+//   boton.addEventListener('click', () => {
+//     categoriaSelect.value = categoria;
+//     actualizarTotal();
+//   });
+// });
+
+// categoriaSelect.addEventListener('change', actualizarTotal);
+// cantidadInput.addEventListener('input', actualizarTotal);
+// actualizarTotal();
+
+// resumenBtn.addEventListener('click', () => {
+//   if (formularioCompleto()) {
+//     const nombre = document.getElementById('nombreN').value;
 //     const cantidad = cantidadInput.value;
-//     const mensaje = `Hola ${nombre}!\nElegiste comprar '${cantidad}' ticket(s).\n\n${totalPagar.textContent}`;
+//     const totalPagarTexto = totalPagar.textContent;
+//     const categoria = categoriaSelect.options[categoriaSelect.selectedIndex].text;
+//     const mensaje = `Hola ${nombre.toUpperCase()}!\nElegiste comprar '${cantidad}' ticket(s)\ncomo '${categoria}'\n\n${totalPagarTexto}`;
 
 //     const popup = document.createElement('div');
 //     popup.classList.add('popup');
 //     popup.textContent = mensaje;
 //     document.body.appendChild(popup);
-
-//     setTimeout(function () {
-//       popup.remove();
-//     }, 3500);
+//     setTimeout(() => popup.remove(), 3600);
 //   } else {
-//     alert('Por favor, completa los datos en el formulario.');
+//     alert("Por favor, completa los datos en el formulario.");
 //   }
 // });
 
-// resetBtn.addEventListener('click', function () {
-//   comprarTicketForm.reset();
-//   totalPagar.textContent = 'Total a pagar: $';
-//   [estudianteBtn, traineeBtn, juniorBtn].forEach(btn => {
-//     btn.classList.remove('button-active');
-//   });
+// document.getElementById('resetBtn').addEventListener('click', () => {
+//   document.getElementById('comprar__ticket').reset();
+//   totalPagar.innerHTML = 'Total a pagar: $';
+//   Object.values(botonesCategoria).forEach(boton => boton.classList.remove('button-active'));
 // });
