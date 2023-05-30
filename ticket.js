@@ -132,7 +132,7 @@ resumenBtn.addEventListener('click', function () {
     // Eliminar el popup después de 3 segundos
     setTimeout(function () {
       popup.remove();
-    }, 3600);
+    }, 3500);
   } else {
     alert("Por favor, completa los datos en el formulario.");
   }
