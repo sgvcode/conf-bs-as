@@ -1,17 +1,17 @@
 // Obtener los botones de categoría
-let estudianteBtn = document.getElementById('estudianteBtn');
-let traineeBtn = document.getElementById('traineeBtn');
-let juniorBtn = document.getElementById('juniorBtn');
-let categoriaSelect = document.getElementById('categoria');
-let cantidadInput = document.getElementById('cantidad');
-let resumenBtn = document.getElementById('resumenBtn');
+const estudianteBtn = document.getElementById('estudianteBtn');
+const traineeBtn = document.getElementById('traineeBtn');
+const juniorBtn = document.getElementById('juniorBtn');
+const categoriaSelect = document.getElementById('categoria');
+const cantidadInput = document.getElementById('cantidad');
+const resumenBtn = document.getElementById('resumenBtn');
 
 document.getElementById('comprar__ticket').addEventListener('submit', function (event) {
   event.preventDefault(); // Evita que el formulario se envíe
 
-  let categoria = document.getElementById('categoria').value;
-  let cantidad = parseFloat(document.getElementById('cantidad').value);
-  let descuento = 0;
+  const categoria = document.getElementById('categoria').value;
+  const cantidad = parseFloat(document.getElementById('cantidad').value);
+  const descuento = 0;
 
   // Descuento
   if (categoria === 'estudiante') {
@@ -22,15 +22,15 @@ document.getElementById('comprar__ticket').addEventListener('submit', function (
     descuento = 0.15;
   }
 
-  let total = cantidad * 200 * (1 - descuento);
+  const total = cantidad * 200 * (1 - descuento);
 
-  let totalPagar = document.getElementById('totalPagar');
+  const totalPagar = document.getElementById('totalPagar');
   totalPagar.innerHTML = `Total a pagar: $ ${total.toFixed(0)}`;
 });
 
 // Impide que se ingrese un número negativo
 cantidadInput.addEventListener('change', function () {
-  let cantidad = parseFloat(cantidadInput.value);
+  const cantidad = parseFloat(cantidadInput.value);
   if (cantidad < 0) {
     cantidadInput.value = "";
   }
@@ -129,7 +129,7 @@ resumenBtn.addEventListener('click', function () {
     // Agregar el popup al cuerpo del documento
     document.body.appendChild(popup);
 
-    // Eliminar el popup después de 3 segundos
+    // Eliminar el popup después de 3.5 segundos
     setTimeout(function () {
       popup.remove();
     }, 3500);
