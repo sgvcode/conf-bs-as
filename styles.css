@@ -410,7 +410,50 @@ footer li a {
   z-index: 9999;
 }
 
+/* Listado de oradores */
+main.listado {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 100px;
+}
 
+.listado h2 {
+  color: var(--gray);
+  text-align: center;
+}
+
+button.login {
+  background-color: transparent;
+  border: none;
+  padding-left: 10px;
+  color: var(--white);
+}
+
+button.login:hover {
+  color: greenyellow;
+}
+
+.popup__login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 400px;
+  margin: auto;
+  border: 1px solid var(--green);
+  border-radius: 5px;
+  padding: 30px;
+  visibility: hidden;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+  align-items: center;
+}
 
 /* INICIO VIEPORTS */
 
@@ -525,7 +568,7 @@ footer li a {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1124px) {
   html {
     scroll-padding: 65px;
   }
@@ -545,9 +588,10 @@ footer li a {
 }
 
 @media (min-width: 992px) {
-  html{
+  html {
     scroll-padding: 0px;
   }
+
   .navbar {
     padding: .5rem 5%;
   }
