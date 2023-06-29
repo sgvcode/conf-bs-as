@@ -74,7 +74,6 @@
 // });
 
 // --------------------------------------------------------------------------
-
 const estudianteBtn = document.getElementById('estudianteBtn');
 const traineeBtn = document.getElementById('traineeBtn');
 const juniorBtn = document.getElementById('juniorBtn');
